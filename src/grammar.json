@@ -4,53 +4,74 @@
     "source_file": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "element"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "text"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "element"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "attr"
+          }
+        ]
       }
     },
+    "text": {
+      "type": "PATTERN",
+      "value": "[^\\x10\\x11\\x12\\x13\\x16]+"
+    },
     "element": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "PATTERN",
-          "value": "[^\\x10\\x11\\x12\\x13\\x16]+"
+          "type": "STRING",
+          "value": "\u0012"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "\u0012"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "text"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "element"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "attr"
               }
-            },
-            {
-              "type": "STRING",
-              "value": "\u0013"
-            }
-          ]
+            ]
+          }
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "\u0010"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "attributes"
-            }
-          ]
+          "type": "STRING",
+          "value": "\u0013"
         }
       ]
     },
-    "attributes": {
+    "attr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\u0010"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_attr_tail"
+        }
+      ]
+    },
+    "_attr_tail": {
       "type": "CHOICE",
       "members": [
         {
@@ -95,7 +116,7 @@
             },
             {
               "type": "SYMBOL",
-              "name": "attributes"
+              "name": "_attr_tail"
             }
           ]
         }

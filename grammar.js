@@ -10,13 +10,12 @@ module.exports = grammar({
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => repeat($.element),
-    element: $ => choice(
-        TEXT,
-        seq(LB, repeat($.element), RB),
-        seq(LP, $.attributes)),
-    attributes: $ => choice(
+    source_file: $ => repeat(choice($.text, $.element, $.attr)),
+    text:    $ => TEXT,
+    element: $ => seq(LB, repeat(choice($.text,$.element,$.attr)), RB),
+    attr:    $ => seq(LP, $._attr_tail),
+    _attr_tail: $ => choice(
         seq(optional(TEXT), RP),
-        seq(optional(TEXT), SEP, $.attributes))
+        seq(optional(TEXT), SEP, $._attr_tail))
   }
 });
