@@ -81,8 +81,8 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "PATTERN",
-                  "value": "[^\\x10\\x11\\x12\\x13\\x16]+"
+                  "type": "SYMBOL",
+                  "name": "text"
                 },
                 {
                   "type": "BLANK"
@@ -102,8 +102,8 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "PATTERN",
-                  "value": "[^\\x10\\x11\\x12\\x13\\x16]+"
+                  "type": "SYMBOL",
+                  "name": "text"
                 },
                 {
                   "type": "BLANK"

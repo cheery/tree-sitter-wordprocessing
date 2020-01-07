@@ -15,7 +15,7 @@ module.exports = grammar({
     element: $ => seq(LB, repeat(choice($.text,$.element,$.attr)), RB),
     attr:    $ => seq(LP, $._attr_tail),
     _attr_tail: $ => choice(
-        seq(optional(TEXT), RP),
-        seq(optional(TEXT), SEP, $._attr_tail))
+        seq(optional($.text), RP),
+        seq(optional($.text), SEP, $._attr_tail))
   }
 });

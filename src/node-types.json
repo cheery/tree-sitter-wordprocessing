@@ -2,7 +2,17 @@
   {
     "type": "attr",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "element",
@@ -51,11 +61,6 @@
     }
   },
   {
-    "type": "text",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "\u0010",
     "named": false
   },
@@ -74,5 +79,9 @@
   {
     "type": "\u0016",
     "named": false
+  },
+  {
+    "type": "text",
+    "named": true
   }
 ]
