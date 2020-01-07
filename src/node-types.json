@@ -1,0 +1,71 @@
+[
+  {
+    "type": "attributes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "element",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "element",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\u0010",
+    "named": false
+  },
+  {
+    "type": "\u0011",
+    "named": false
+  },
+  {
+    "type": "\u0012",
+    "named": false
+  },
+  {
+    "type": "\u0013",
+    "named": false
+  },
+  {
+    "type": "\u0016",
+    "named": false
+  }
+]
